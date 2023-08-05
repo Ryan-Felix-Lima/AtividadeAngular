@@ -1,0 +1,185 @@
+<h1 class="fundo centralizar">Escolha uma das opções abaixo:</h1>
+<!--inicio da Row 1-->
+<div class="row ">
+  <!--espaço inicial-->
+
+  <!--inicio da coluna 1(calculadora)-->
+  <div class="col-md">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title centralizar">Calculadora</h5>
+        <p class="card-text ">Fazer calculos básicos como adição,subtração,multiplicação e divisão</p>
+        <button type="button" class="btn btn-dark" (click)="mostrar()">{{frase}}</button>
+        <div class="teste" *ngIf="mostra">
+          <form>
+            <!--inicio do formulario 1-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">digite o primeiro número</label>
+                  <input type="number" class="form-control" placeholder="123" name="numero1" [(ngModel)]="valor_1">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 1-->
+          <form>
+            <!--inicio do formulario 2-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">digite o segundo número</label>
+                  <input type="number" class="form-control" placeholder="123" name="numero2" [(ngModel)]="valor_2">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 2-->
+          <!--inicio dos operadores-->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="operar" id="inlineCheckbox1" value="option1"
+              [(ngModel)]="adicao">
+            <label class="form-check-label" for="inlineCheckbox1">adição</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="operar" id="inlineCheckbox2" value="option2"
+              [(ngModel)]="subtracao">
+            <label class="form-check-label" for="inlineCheckbox2">subtração</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="operar" id="inlineCheckbox3" value="option3"
+              [(ngModel)]="multiplicacao">
+            <label class="form-check-label" for="inlineCheckbox3">multiplicação</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="operar" id="inlineCheckbox4" value="option4"
+              [(ngModel)]="divisao">
+            <label class="form-check-label" for="inlineCheckbox4">divição</label>
+          </div>
+          <!--fim dos operadores-->
+          <button type="button" class="btn btn-dark" (click)="calcular()">calcular</button>
+          <div class="teste" *ngIf="cal">
+            <div class="alert alert-success col-md" role="alert">
+              <h4 class="alert-heading centralizar">O resultado é {{resultado}}</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--fim da coluna 1-->
+  <!--inicio da coluna 2(Idade)-->
+  <div class="col-md ">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title centralizar">Idade</h5>
+        <p class="card-text ">Fazer calculos com os anos de nascimento para descobrir sua idade</p>
+        <button type="button" class="btn btn-dark" (click)="mostrar1()">{{frase1}}</button>
+        <div class="teste" *ngIf="mostra1">
+          <form>
+            <!--inicio do formulario 1-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">Digite o ano atual</label>
+                  <input type="number" class="form-control" placeholder="123" name="numero1" [(ngModel)]="valor_1">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 1-->
+          <form>
+            <!--inicio do formulario 2-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">Digite o ano que você nasceu</label>
+                  <input type="number" class="form-control" placeholder="123" name="numero2" [(ngModel)]="valor_2">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 2-->
+          <button type="button" class="btn btn-dark" (click)="calcularIdade()">calcular</button>
+          <div class="teste" *ngIf="cal1">
+            <div class="alert alert-success col-md" role="alert">
+              <h4 class="alert-heading centralizar">Sua idade será de {{resultado}} anos</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--fim da coluna 2-->
+
+  </div>
+</div>
+<!--fim da Row 1-->
+<!--inicio da Row 2-->
+<div class="row">
+  <div class="col-md ">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title centralizar">Estações</h5>
+        <p class="card-text ">mostrar qual será a estação dependendo da data que escolher</p>
+        <button type="button" class="btn btn-dark" (click)="mostrar2()">{{frase2}}</button>
+        <div class="teste" *ngIf="mostra2">
+          <form>
+            <!--inicio do formulario 1-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">Escolha uma data:</label>
+                  <input type="date" class="form-control" placeholder="123" name="data" [(ngModel)]="data">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 1-->
+          <button type="button" class="btn btn-dark" (click)="estacao()">calcular</button>
+          <div class="teste" *ngIf="cal2">
+            <div class="alert alert-success col-md" role="alert">
+              <h4 class="alert-heading centralizar">A estação que está é {{resposta}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title centralizar">Tabuada</h5>
+        <p class="card-text ">Fazer calculos da tabuada de multiplicação</p>
+        <button type="button" class="btn btn-dark" (click)="mostrar3()">{{frase3}}</button>
+        <div class="teste" *ngIf="mostra3">
+          <form>
+            <!--inicio do formulario 1-->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="num1">Escolha uma número:</label>
+                  <input type="number" class="form-control" placeholder="123" name="tabuada" [(ngModel)]="valor_1">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--fim do formulario 1-->
+          <button type="button" class="btn btn-dark" (click)="tabuada()">Calcular</button>
+          <div class="teste" *ngIf="cal3">
+            <div class="alert alert-success col-md" role="alert">
+              <h4 class="alert-heading centralizar" *ngFor="let rest of tabuad,let i=index">{{valor_1}} X {{i}} = {{rest}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fim da Row 2-->
+<div class="row">
+  <div class="col-md">
+
+  </div>
+</div>
